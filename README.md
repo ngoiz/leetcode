@@ -1,4 +1,4 @@
-# LeetCodeQuestion Repo
+# LeetCode Question Repo
 
 Norberto's collection of [LeetCode](http://leetcode.com) problems. Using Python3 and focusing on data structures and algorithms.
 
