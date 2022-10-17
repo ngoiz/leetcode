@@ -6,8 +6,9 @@ class Solution:
             
         for i in range(1, len(nums)):
             prefix.append(nums[i] + prefix[-1])
-    
-            if prefix[-1] + start_value < 1:
-                start_value += 1 - (prefix[-1] + start_value)
+            
+            diff = prefix[-1] + start_value
+            if diff < 1:
+                start_value += 1 - diff
         
         return start_value
