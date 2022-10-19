@@ -25,7 +25,11 @@ def reverse_ll(head: Optional[ListNode], max_switches: int) -> Optional[ListNode
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         """
-        1. Find the ``before`` node
+        1. Find the ``before`` node if it exists
+        
+        2. Reverse the list from ``left`` to ``right``
+        
+        3. Link ``before`` ``next_node`` of list reversal
         """
         # change to 0 index
         left -= 1
@@ -39,7 +43,6 @@ class Solution:
         while ptr:
             if index_list == (left-1):
                 before = ptr
-                # pass
                 
             # reverse between left and right
             if index_list >= left and index_list < right:
