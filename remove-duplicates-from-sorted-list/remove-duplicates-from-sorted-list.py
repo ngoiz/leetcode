@@ -11,15 +11,17 @@ class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head:
             return 
-        ptr = head
+        left = head
+        right = head
         
-        while ptr.next:
-            if (ptr.next.val == ptr.val):
-                delete_node(ptr)
+        while right.next:
+            right = right.next
+            if right.val != left.val:
+                left.next = right
+                left = right
             else:
-                ptr = ptr.next
-
-                
+                delete_node(left)
+             
         return head
         
         
