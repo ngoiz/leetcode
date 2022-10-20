@@ -1,9 +1,12 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
+        """Missing number is the difference between expected sum to n and sum of nums"""
         n = len(nums)
         
-        expected = set(range(n+1))
+        running_sum = 0
+        expected_sum = n  # initialise here since range is [0, n]
         for i in range(n):
-            expected.remove(nums[i])
-        
-        return expected.pop()
+            running_sum += nums[i]
+            expected_sum += i
+            
+        return expected_sum - running_sum
